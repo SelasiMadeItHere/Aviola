@@ -1,29 +1,42 @@
 import React from 'react'
-import {BiMenu} from 'react-icons/bi'
-// import Button from 
+import { BiChat, BiMenu, BiBell, BiNotification } from 'react-icons/bi'
+import { MdOutlineNightlightRound, MdOutlineWbSunny } from 'react-icons/md'
+// import { SlEnvolope } from 'react-icons/sl'
+import { CiCircleList, CiMail, CiBellOn, CiCalendar } from 'react-icons/ci'
+import Avatar from '@mui/material/Avatar';
+import { Stack } from '@mui/system';
+
 
 function Header() {
     return (
-        <div className=' bg-main-bg w-[100%] p-4'>
-            <div className=' grid grid-col-6 '>
-                <div className=' grid-col-1'>
-                    <ul typeof='none' className=' inline-flex'>
-                        <li className='text-2xl'><BiMenu/></li>
-                        <li className='px-2'>Dashboard</li>
-                        <li className='px-2'>Users</li>
-                        <li className='px-2'>Settings</li>
+        <div className=' bg-blue-900 w-[100%] p-4 top-0 absolute'>
+            <div className=' grid grid-col-4'>
+                <div className=' col-start-1'>
+                    <ul typeof='none' className=' inline-flex text-md'>
+                        <li className='text-3xl px-3'><BiMenu /></li>
+                        <li className='px-2 hover:text-blue-600'>Dashboard</li>
+                        <li className='px-2 hover:text-blue-600'>Users</li>
+                        <li className='px-2 hover:text-blue-600'>Settings</li>
                     </ul>
                 </div>
 
-                <div className=' col-span-2'></div>
+                <div className='col-span-2'></div>
 
-                <div className=' grid-start-3 bg-blue-800'>
-                    <button className='px-2'>DAY</button>
-                    <button className='px-1'>NIGHT</button>
+                <div className='col-start-5 right-0'>
+                    <Stack direction='row' spacing={2} className=' text-2xl'>
+                        <MdOutlineWbSunny/>
+                        <MdOutlineNightlightRound/>
+                    </Stack>
                 </div>
-                
-                <div className='grid-start-4'>
-Settingss
+
+                <div className='col-start-9 text-3xl'>
+                    <ul direction='row' className=' right-0 inline-flex gap-3'>
+                        <CiBellOn/>
+                        <CiCircleList/>
+                        <CiMail/>
+                        <Avatar src='../data/avatar3.png' alt='Pfp'/>
+                        <CiCalendar/>
+                    </ul>
                 </div>
             </div>
         </div>
