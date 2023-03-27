@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useState } from 'react'
 import { BrowserRouter, Router, Routes } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
@@ -11,8 +11,9 @@ function App() {
     return (
         <div>
             <BrowserRouter>
-                <div className=' relative dark:bg-main-dark-bg grid grid-rows-3 grid-flow-row'>
-                        <Header />
+                <div className=' relative dark:bg-main-dark-bg grid grid-cols-8'>
+                        {/* <SideNav className=' col-start-1'/> */}
+                        <Header  className=' col-start-2'/>
                         
                     <div className=' fixed right-4 bottom-4 bg-blue-800 rounded-full' style={{ zIndex: '1000' }}>
                         <TooltipComponent content="settings" position="Top">
