@@ -5,37 +5,54 @@ import { MdOutlineNightlightRound, MdOutlineWbSunny } from 'react-icons/md'
 import { CiCircleList, CiMail, CiBellOn, CiCalendar } from 'react-icons/ci'
 import Avatar from '@mui/material/Avatar';
 import { Stack } from '@mui/system';
+import avatarr1 from '../data/avatar.jpg'
+import { Badge } from '@mui/material';
+import SideNav from './SideNav';
 
 
 function Header() {
     return (
-        <div className=' bg-blue-900 w-[100%] p-4 top-0 absolute'>
-            <div className=' grid grid-col-4'>
+        <div className='w-[100%] p-3 top-0 absolute border-y-1 border-slate-500'>
+            <div className=' grid grid-col-10'>
                 <div className=' col-start-1'>
                     <ul typeof='none' className=' inline-flex text-md'>
-                        <li className='text-3xl px-3'><BiMenu /></li>
-                        <li className='px-2 hover:text-blue-600'>Dashboard</li>
-                        <li className='px-2 hover:text-blue-600'>Users</li>
-                        <li className='px-2 hover:text-blue-600'>Settings</li>
+                        <li className='pointer hover:text-blue-600 text-2xl px-3 text-slate-500'><BiMenu onClick={<SideNav/>}/></li>
+                        <li className='px-2 text-slate-500 hover:text-slate-700 cursor-pointer'>Dashboard</li>
+                        <li className='px-2 text-slate-500 hover:text-slate-700 cursor-pointer'>Users</li>
+                        <li className='px-2 text-slate-500 hover:text-slate-700 cursor-pointer'>Settings</li>
                     </ul>
                 </div>
 
                 <div className='col-span-2'></div>
 
-                <div className='col-start-5 right-0'>
+                <div className='col-start-8 text-right'>
                     <Stack direction='row' spacing={2} className=' text-2xl'>
-                        <MdOutlineWbSunny/>
-                        <MdOutlineNightlightRound/>
+                        <div className=' bg-indigo-700 gap-3 text-white inline-flex p-2 rounded-md'>
+                            <MdOutlineWbSunny />
+                            <MdOutlineNightlightRound />
+                        </div>
                     </Stack>
                 </div>
 
-                <div className='col-start-9 text-3xl'>
-                    <ul direction='row' className=' right-0 inline-flex gap-3'>
-                        <CiBellOn/>
-                        <CiCircleList/>
-                        <CiMail/>
-                        <Avatar src='../data/avatar3.png' alt='Pfp'/>
-                        <CiCalendar/>
+                <div className='col-start-9 text-3xl text-right'>
+                    <ul direction='row' className='inline-flex gap-5'>
+                        <Badge badgeContent={5} color='error'>
+                            <CiBellOn />
+                        </Badge>
+
+                        <Badge badgeContent={5} color='warning'>
+                            <CiCircleList />
+                        </Badge>
+
+                        <Badge badgeContent={5} color='success'>
+                            <CiMail />
+                        </Badge>
+
+                        <Avatar src={avatarr1} sx={{ width: 39, height: 39 }} />
+
+                        <Badge>
+                            <CiCalendar />
+                        </Badge>
                     </ul>
                 </div>
             </div>
