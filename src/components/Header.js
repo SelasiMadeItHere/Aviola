@@ -36,8 +36,8 @@ const handleclick= () =>setNav(!nav)
                 <div className='col-start-8 text-right'>
                     <Stack direction='row' spacing={2} className=' text-2xl'>
                         <div className=' bg-indigo-700 gap-3 text-white inline-flex p-2 rounded-md'>
-                            <MdOutlineWbSunny />
-                            <MdOutlineNightlightRound />
+                            <MdOutlineWbSunny className='hover:text-blue-600'/>
+                            <MdOutlineNightlightRound className='hover:text-blue-600'/>
                         </div>
                     </Stack>
                 </div>
