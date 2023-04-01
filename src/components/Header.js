@@ -17,12 +17,12 @@ function Header() {
     const handleclick = () => setNav(!nav)
 
     return (
-        <div className='w-[90%] p-3 top-0 absolute border-y-1 border-slate-500'>
+        <div className='w-[100%] p-3 top-0 border-y-1 border-slate-500 fixed'>
             <div className=' grid grid-col-10'>
                 <div className=' col-start-1'>
                     <ul typeof='none' className=' inline-flex text-md'>
                         <li className='pointer hover:text-blue-600 text-2xl px-3 text-slate-500' onClick={handleclick}>
-                            {!nav ? <BiMenu /> : <GrClose className='hover:text-blue-600' /> }
+                            {!nav ? <BiMenu /> : <GrClose /> }
                         </li>
                         <li className='px-2 text-slate-500 hover:text-slate-700 cursor-pointer'>Dashboard</li>
                         <li className='px-2 text-slate-500 hover:text-slate-700 cursor-pointer'>Users</li>

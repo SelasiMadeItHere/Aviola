@@ -12,11 +12,11 @@ function App() {
         <div>
             <BrowserRouter>
                 <div className=' relative grid grid-cols-8 w-[100%]'>
-                    <div className=' col-start-1'>
+                    {/* <div className=' col-start-1'>
                         <SideNav/>
-                    </div>
+                    </div> */}
 
-                    <div className=' col-start-2 col-span-7' >
+                    <div className=' col-start-1 col-span-8' >
                         <Header />
                     </div>
 

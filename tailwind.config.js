@@ -32,6 +32,13 @@ module.exports = {
           1200: '1200px',
           1400: '1400px',
         },
+        screens:{
+          'sm': '640px',
+          'md': '768px',
+          'lg': '1024px',
+          'xl': '1280px',
+          '2xl': '1536px'
+        },
         height: {
           80: '80px',
         },
