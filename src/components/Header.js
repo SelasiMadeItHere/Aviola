@@ -1,30 +1,33 @@
 import React, { useState } from 'react'
 import { BiChat, BiMenu } from 'react-icons/bi'
 import { MdOutlineNightlightRound, MdOutlineWbSunny } from 'react-icons/md'
-// import { SlEnvolope } from 'react-icons/sl'
 import { CiCircleList, CiMail, CiBellOn, CiCalendar } from 'react-icons/ci'
 import Avatar from '@mui/material/Avatar';
 import { Stack } from '@mui/system';
 import avatarr1 from '../data/avatar.jpg'
 import { Badge } from '@mui/material';
-// import SideNav from './SideNav';
 import { GrClose } from 'react-icons/gr'
-import { Drawer, Box } from '@mui/material'
+import BasicBreadcrumb from './BasicBreadcrumb';
+
+
 
 function Header() {
 
     const [nav, setNav] = useState(false)
     const handleclick = () => setNav(!nav)
-    const [isDrawOpen, setIsDrawerOpen] = useState(false)
-
     return (
         <>
-            <div className='w-[100%] p-3 top-0 border-y-1 fixed'>
-                <div className=' grid grid-col-10'>
+            <div className='w-[100%] top-0 fixed grid grid-rows-2 bg-white'>
+                <div className=' grid grid-col-10 row-start-1 border-y-1 p-3'>
                     <div className=' col-start-1 col-span-2'>
-                        <ul>
-                            <li><BiMenu/></li>
-                            <li>Dashboard</li>
+                        <ul typeof='none' className=' inline-flex text-md m-2'>
+                            <li className='pointer hover:text-blue-600 text-2xl px-3 text-slate-500' onClick={handleclick}>
+                                {!nav ? <BiMenu /> : <GrClose />}
+                                {/* <SideNav/> */}
+                            </li>
+                            <li className='px-2 text-slate-500 hover:text-slate-700 cursor-pointer'>Dashboard</li>
+                            <li className='px-2 text-slate-500 hover:text-slate-700 cursor-pointer'>Users</li>
+                            <li className='px-2 text-slate-500 hover:text-slate-700 cursor-pointer'>Settings</li>
                         </ul>
                     </div>
 
@@ -60,6 +63,10 @@ function Header() {
                             </Badge>
                         </ul>
                     </div>
+                </div>
+
+                <div className=' row-start-2 px-12 py-3 h-2'>
+                    <BasicBreadcrumb />
                 </div>
             </div>
         </>
