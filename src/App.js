@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { BrowserRouter, Router, Routes } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import Header from './components/Header';
 import BasicBreadcrumb from './components/BasicBreadcrumb'
 import ChartStats from './components/ChartStats';
+import Formpage from './components/Formpage'
+
 
 
 function App() {
+
     return (
         <>
             <div className='h-screen grid grid-rows-5 bg-slate-200'>
@@ -17,7 +20,8 @@ function App() {
 
                 <div className=' inline row-start-2 text-center gap-12 sm:inline-block '>
 
-                    <ChartStats className='bg-purple-600' />
+                    {/* <ChartStats className='bg-purple-600' /> */}
+                    <Formpage/>
 
                 </div>
 
