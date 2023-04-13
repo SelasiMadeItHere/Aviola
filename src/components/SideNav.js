@@ -1,21 +1,24 @@
 import React from 'react'
-import { Drawer } from '@mui/material'
-
+import { Drawer, ListItem, List, Box, Typography, IconButton } from '@mui/material'
+import { useState } from 'react'
+import { BiMenu } from 'react-icons/bi'
+import logo from'../Assets/CoreUI logo.png'
 
 function SideNav() {
-  const [isDrawOpen, setIsDrawerOpen] = useState(false)
+  const [openDrawer, setOpenDrawer] = useState(false)
+
   return (
     <>
-      <div className=' p-5 bg-slate-800 text-slate-300 w-[17%] min-h-full'>
-        <Drawer anchor='left' open={isDrawOpen} onClose={() => setIsDrawerOpen(false)} className='text-center m-12 w-[200px]'>
-          <ul>
-            <li>TABBBB</li>
-            <li>TAB1</li>
-            <li>TAB2</li>
-            <li>TAB3</li>
-            <li>TAB4</li>
-            <li>TAB5</li>
-          </ul>
+      <div>
+        <IconButton onClick={()=>setOpenDrawer(true)} arial-label='logo'>
+          <BiMenu className=' hover:text-blue-600 text-md'/>
+        </IconButton>
+        <Drawer anchor='left' open={openDrawer} onClose={() => setOpenDrawer(false)} className=' '>
+          <Box className=' w-52'>
+            <Typography className=' h-64'>
+            <img src={logo} alt='logo'/>
+            </Typography>
+          </Box>
         </Drawer>
       </div>
     </>
@@ -23,4 +26,3 @@ function SideNav() {
 }
 
 export default SideNav
-

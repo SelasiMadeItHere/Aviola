@@ -22,8 +22,8 @@ function Formpage() {
           <option>OTHERS</option>
         </select>
         <label>PHONE NUMBER</label>
-        <Input name='telephone' className=' border-solid border-1 w-[50%] self-center' type='telephone' placeholder='Phone Number' required />
-        <input type='submit' value='SUBMIT'/>
+        <input name='telephone' className=' border-solid border-1 w-[50%] self-center' type='telephone' placeholder='Phone Number' required />
+        <input type='button' value='SUBMIT'/>
       </FormGroup>
     </div>
   )

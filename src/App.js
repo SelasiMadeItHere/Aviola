@@ -6,6 +6,7 @@ import Header from './components/Header';
 import BasicBreadcrumb from './components/BasicBreadcrumb'
 import ChartStats from './components/ChartStats';
 import Formpage from './components/Formpage'
+import SideNav from './components/SideNav';
 
 
 
@@ -13,21 +14,16 @@ function App() {
 
     return (
         <>
-            <div className='h-screen grid grid-rows-5 bg-slate-200'>
-                <div className=' fixed row-start-1'>
+            <div className='h-screen grid bg-slate-200'>
+                <div className=' shadow-2xl'>
                     <Header />
+                    <BasicBreadcrumb />
                 </div>
 
-                <div className=' inline row-start-2 text-center gap-12 sm:inline-block '>
-
-                    {/* <ChartStats className='bg-purple-600' /> */}
-                    <Formpage/>
-
-                </div>
 
                 <div className=' fixed right-4 bottom-4 bg-blue-800 rounded-full' style={{ zIndex: '1000' }}>
                     <TooltipComponent content="settings" position="Top">
-                        <button className=' text-4xl text-white p-3'>
+                        <button className=' text-4xl text-white p-3 hover:rotate-180 '>
                             <FiSettings />
                         </button>
                     </TooltipComponent>
