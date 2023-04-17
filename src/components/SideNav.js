@@ -11,7 +11,7 @@ function SideNav() {
     <>
       <div>
         <IconButton onClick={()=>setOpenDrawer(true)} arial-label='logo'>
-          <BiMenu className=' hover:text-blue-600 text-md'/>
+          <BiMenu className=' hover:text-blue-600 text-md '/>
         </IconButton>
         <Drawer anchor='left' open={openDrawer} onClose={() => setOpenDrawer(false)} className=' '>
           <Box className=' w-52'>

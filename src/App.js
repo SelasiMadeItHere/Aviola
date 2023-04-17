@@ -17,9 +17,12 @@ function App() {
             <div className='h-screen grid bg-slate-200'>
                 <div className=' shadow-2xl'>
                     <Header />
-                    <BasicBreadcrumb />
+                    <BasicBreadcrumb className='shadow-xl'/>
                 </div>
 
+                <div>
+                    <ChartStats/>
+                </div>
 
                 <div className=' fixed right-4 bottom-4 bg-blue-800 rounded-full' style={{ zIndex: '1000' }}>
                     <TooltipComponent content="settings" position="Top">

@@ -25,9 +25,9 @@ function Header() {
                             <li className=' hover:text-blue-600 text-slate-500'>
                                 <SideNav />
                             </li>
-                            <li className='px-2 text-slate-500 hover:text-slate-700 cursor-pointer'>Dashboard</li>
-                            <li className='px-2 text-slate-500 hover:text-slate-700 cursor-pointer'>Users</li>
-                            <li className='px-2 text-slate-500 hover:text-slate-700 cursor-pointer'>Settings</li>
+                            <li className='px-2 text-slate-500 hover:text-slate-700 cursor-pointer pt-2'>Dashboard</li>
+                            <li className='px-2 text-slate-500 hover:text-slate-700 cursor-pointer pt-2'>Users</li>
+                            <li className='px-2 text-slate-500 hover:text-slate-700 cursor-pointer pt-2'>Settings</li>
                         </ul>
                     </div>
 
