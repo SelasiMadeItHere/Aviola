@@ -15,13 +15,13 @@ function App() {
     return (
         <>
             <div className='h-screen grid bg-slate-200'>
-                <div className=' shadow-2xl'>
+                <div>
                     <Header />
                     <BasicBreadcrumb className='shadow-xl'/>
                 </div>
 
-                <div>
-                    <ChartStats/>
+                <div classname=' mt-6'>
+                    <Formpage/>
                 </div>
 
                 <div className=' fixed right-4 bottom-4 bg-blue-800 rounded-full' style={{ zIndex: '1000' }}>
