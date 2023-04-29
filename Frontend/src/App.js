@@ -18,9 +18,6 @@ function App() {
                 <div>
                     <Header />
                     <BasicBreadcrumb className='shadow-xl'/>
-                </div>
-
-                <div classname=' mt-6'>
                     <Formpage/>
                 </div>
 

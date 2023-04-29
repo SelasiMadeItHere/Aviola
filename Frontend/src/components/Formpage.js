@@ -1,91 +1,60 @@
-import React, { useState } from 'react'
-import { FormGroup, Input } from '@mui/material'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios'
-
+import { Button, TableBody, TableHead } from '@mui/material';
+import Stack from '@mui/material/Stack';
 
 function Formpage() {
-  const [fname, setFname] = useState('');
-  const [sname, setSname] = useState('');
-  const [age, setAge] = useState('');
-  const [locations, setLocations] = useState('');
-  const [gender, setGender] = useState('');
-  const [telephone, setTelephone] = useState('');
-
-
-  const handlesubmit = () => {
-    e.preventDefault();
-    axios.post('/api/user', {
-      fname,
-      sname,
-      age,
-      locations,
-      gender,
-      telephone,
-    })
-      .then(function (response) {
-        console.log(response);
-        window.alert('collected')
-      })
-      .catch(function (error) {
-        console.log(error);
-        // handle error
-      });
-  }
-
+  const [data, setData] = useState([]);
+  const loadData = async () => {
+    const response = await axios.get("http://localhost:5000/api/get");
+    setData(response.data);
+  };
+  useEffect(() => {
+    loadData();
+  }, []);
   return (
-
-<>    
-    <div className=' text-center'>
-      <FormGroup className='rounded bg-white p-6 w-1/2 text-left mx-[25%] gap-5'>
-
-        <Input name='fname'
-          className=' border-1 w-[50%] self-center '
-          placeholder='Enter your first name'
-          value={fname}
-          onChange={(e) => setFname(e.target.value)}
-          required />
-
-        <Input name='sname'
-          className=' border-x-1 border-y-1 w-[50%] self-center'
-          placeholder='enter your last name'
-          value={sname}
-          onChange={(e) => setSname(e.target.value)}
-          required />
-
-        <Input name='age'
-          className=' border-solid border-1 w-[50%] self-center'
-          placeholder='enter your age'
-          type='number'
-          onChange={(e) => setAge(e.target.value)}
-          value={age} required />
-
-        <Input name='locations'
-          className=' border-solid border-1 w-[50%] self-center'
-          placeholder='Enter your address'
-          value={locations}
-          onChange={(e) => setLocations(e.target.value)}
-          required />
-
-        <select name='gender' className=' border-solid border-1 w-[50%] self-center p-2' value={gender}
-          onChange={(e) => setGender(e.target.value)} >
-          <option>MALE</option>
-          <option>FEMALE</option>
-          <option>BISEXUAL</option>
-          <option>OTHERS</option>
-        </select>
-
-        <input name='telephone'
-          className=' border-solid border-1 w-[50%] self-center'
-          type='telephone'
-          value={telephone}
-          placeholder='Phone Number'
-          onChange={(e) => setTelephone(e.target.value)}
-          required />
-       
-          <button type='submit' onClick={handlesubmit}> SUBMIT FORM </button>
-      </FormGroup>
+    <div className=' grid grid-cols-8 mt-6'>
+      <ToastContainer className='top-4 text-center' />
+      <table className='items-center bg-white col-start-2 col-end-8 rounded-lg drop-shadow-md'>
+        <thead className=' bg-green-600'>
+          <tr>
+            <th className=' p-4 gap-6'>ID</th>
+            <th className=' p-4 gap-6'>First Name</th>
+            <th className=' p-4 gap-6'>Last Name</th>
+            <th className=' p-4 gap-6'>E-mail</th>
+            <th className=' p-4 gap-6'>Contact</th>
+            <th className=' p-4 gap-6'>Actions</th>
+          </tr>
+        </thead>
+        <tbody className=' p-12'>
+          {data.map((item, index) => {
+            return (
+              <tr key={item.id}>
+                <th scope="row">  {index + 1}</th>
+                <td className=' text-center p-3'>{item.fname}</td>
+                <td className=' text-center p-3'>{item.sname}</td>
+                <td className=' text-center p-3'>{item.email}</td>
+                <td className=' text-center p-3'>{item.contact}</td>
+                <td >
+                  <Stack direction='row' spacing={4}>
+                    <Link to={`/edit/${item.id}`}>
+                      <Button variant='contained' color='primary'>EDIT</Button>
+                    </Link>
+                    <Button variant='contained' color='error'>DELETE</Button>
+                    <Link>
+                      <Button variant='outlined'> VIEW</Button>
+                    </Link>
+                  </Stack>
+                </td>
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
     </div>
-    </>
   )
 }
 
